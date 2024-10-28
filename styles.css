@@ -2,9 +2,27 @@
 #container {
 	width: 80%;
 	margin: auto;
-	border: 2px solid #000;
+	border: 2px solid black;
 	text-align: center;
+	border-radius: 8px;
+	padding: 20px 30px 50px 30px;
 }
-.verification_subtext {
+#verification_subtext {
 	font-size: 14px;
 }
+
+.code-container {
+	display: flex;
+	justify-content: space-between;
+}
+input {
+	width: 10%;
+	height: 80px;
+	font-size: 28px;
+	text-align:center;
+}
+
+
+
+
+
