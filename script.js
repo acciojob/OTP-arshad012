@@ -1,23 +1,28 @@
 //your JS code here. If required.
 const allInputs = document.querySelectorAll('.code');
+allInputs.forEach((input) => {
+	input.addEventListener('input', (e) => {
+		const target = e.target;
+		const val = target.value;
+		if (val != "") {
+	        const next = target.nextElementSibling;
+	        if (next) {
+	            next.focus();
+	        }
+	    }
+	});
+});
 
-allInputs.forEach((input, i) => {
-	input.oninput = () => {
-		// input.onkeydown = (event) => {
-		// 	if(event.key == 'Backspace' && i>0) {
-		// 		allInputs[i-1].focus();
-		// 		return;
-		// 	}
-		// }
-		if(input.value != '' && i < allInputs.length-1) {
-			allInputs[i+1].focus();
+allInputs.forEach((input) => {
+	input.addEventListener('keyup', (e) => {
+		const target = e.target;
+		const key = e.key.toLowerCase();
+		if(key == 'backspace' || key == 'delete') {
+			const pre = target.previousElementSibling;
+			if(pre) {
+				pre.focus();
+			}
 		}
-		else if(input.value == '' && i > 0) {
-			allInputs[i-1].focus();
-		}
-	}
+	})
 })
 
-// window.addEventListener('keydown', (event) => {
-// 	console.log(event.key);
-// })
